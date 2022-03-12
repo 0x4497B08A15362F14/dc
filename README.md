@@ -12,8 +12,8 @@ A state script is compromised of:
 States define object's behavior via runtime script code:
 
 *response to events
-*natural behavior over time 
-*transition between states 
+*natural behavior over time
+*transition between states
 
 An example of a state script is as follows:
 
