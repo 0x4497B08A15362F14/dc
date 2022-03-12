@@ -2,7 +2,7 @@
 In this repository you're gonna find a format specification for the script files used in the Naughty Dog Engine.
 This is still a work in progress. 
 
-[What's DC]
+# What's DC
 DC is a runtime scripting language thats integrated into the Naughty Dog engine since Uncharted Drake's Fortune (you can find a presentation by Dan Liebgold [here](https://gdcvault.com/play/211/Adventures-in-Data-Compilation-and))
 Its format changed in Uncharted 2 Among Thieves with the introduction of State Scripts. 
 A state script is compromised of:
@@ -11,18 +11,18 @@ A state script is compromised of:
 
 States define object's behavior via runtime script code:
 
-*response to events
-*natural behavior over time
-*transition between states
+* response to events
+* natural behavior over time
+* transition between states
 
 An example of a state script is as follows:
-
+```
 (define-state-script ss-example
-	:initial-state 'initial  											;;state from where start executing. you can see this as a main/entry point
+	:initial-state 'initial  	;;state from where start executing. you can see this as a main/entry point
 	:options (new ss-options :wait-for-levels (make-symbol-array 'player))
 	:declarations (declaration-list
-					(var 'upgrade-level			:type int32 :default 0) ;;define a int32 variable with value 0;
-					(var 'attacker-id			:type symbol)           ;;define a variable of type symbol (aka StringId)
+			(var 'upgrade-level	:type int32 :default 0) ;;define a int32 variable with value 0;
+			(var 'attacker-id	:type symbol)           ;;define a variable of type symbol (aka StringId)
 	)
 	
 	(state ('initial)
@@ -49,4 +49,4 @@ An example of a state script is as follows:
 		)
 	)
 )
-
+```
